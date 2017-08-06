@@ -1,0 +1,21 @@
+PODS:
+  - Alamofire (4.5.0)
+
+DEPENDENCIES:
+  - Alamofire (from `https://github.com/Alamofire/Alamofire`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :git: https://github.com/Alamofire/Alamofire
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: 5bd458ca09a57fb2999772745d6438585f5140a7
+    :git: https://github.com/Alamofire/Alamofire
+
+SPEC CHECKSUMS:
+  Alamofire: 2983f0804e7566e66b937f5e7ef4aeba7b910426
+
+PODFILE CHECKSUM: 5bc308df973e944e48b15b5c96137813fbfafa03
+
+COCOAPODS: 1.2.0
