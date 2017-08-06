@@ -40,6 +40,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		192CFAAF1F37BB7300685A02 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
 		1999373B1F3700550057FCC5 = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +68,7 @@
 		199937461F3700550057FCC5 /* RainOrShine */ = {
 			isa = PBXGroup;
 			children = (
+				192CFAAF1F37BB7300685A02 /* Controller */,
 				199937471F3700550057FCC5 /* AppDelegate.swift */,
 				199937491F3700550057FCC5 /* WeatherVC.swift */,
 				1999374B1F3700550057FCC5 /* Main.storyboard */,
