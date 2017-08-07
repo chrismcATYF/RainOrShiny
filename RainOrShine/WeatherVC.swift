@@ -7,17 +7,20 @@
 //
 
 import UIKit
+import Alamofire
 
 class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var dateLbl: UILabel!
     @IBOutlet weak var tempLbl: UILabel!
     @IBOutlet weak var locationLbl: UILabel!
-    @IBOutlet weak var currentWeatherImage: UIImageView!
     @IBOutlet weak var weatherTypeLbl: UILabel!
     @IBOutlet weak var weatherTableView: UITableView!
+    @IBOutlet weak var currentWeatherImg: UIImageView!
     
     var currentWeather = CurrentWeather()
+    var forecast = Forecast!.self
+    var allForecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +28,35 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
         
+        currentWeather = CurrentWeather()
         currentWeather.downloadWeatherDetails {
-            
+            self.downloadForecastData() {
+                self.updateMainUI()
+            }
         }
         
+    }
+    
+    func downloadForecastData(completed: @escaping DownloadComplete) {
+        
+        let forecastURL = URL(string: FORECAST_URL)!
+        
+        Alamofire.request(forecastURL).responseJSON { response in
+            let result = response.result
+            
+            if let dict = result.value as? Dictionary<String, AnyObject> {
+                
+                if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
+                    
+                    for obj in list {
+                        let forecast = Forecast(weatherDict: obj)
+                        self.allForecasts.append(forecast)
+                        print(obj)
+                    }
+                }
+            }
+            completed()
+        }
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -45,7 +73,28 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    
+    func updateMainUI() {
+        dateLbl.text = currentWeather.date
+        tempLbl.text = "\(currentWeather.currentTemp)"
+        weatherTypeLbl.text = currentWeather.weatherType
+        locationLbl.text = currentWeather.cityName
+        currentWeatherImg.image = UIImage(named: currentWeather.weatherType)
+    }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

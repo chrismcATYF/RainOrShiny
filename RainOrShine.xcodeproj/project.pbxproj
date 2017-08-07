@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		192CFAB41F37C25300685A02 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CFAB31F37C25300685A02 /* Constants.swift */; };
 		192CFAB71F37C53900685A02 /* CurrentWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 192CFAB61F37C53900685A02 /* CurrentWeather.swift */; };
+		198C4E5B1F38107000484DAA /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 198C4E5A1F38107000484DAA /* Forecast.swift */; };
 		199937481F3700550057FCC5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199937471F3700550057FCC5 /* AppDelegate.swift */; };
 		1999374A1F3700550057FCC5 /* WeatherVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199937491F3700550057FCC5 /* WeatherVC.swift */; };
 		1999374D1F3700550057FCC5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1999374B1F3700550057FCC5 /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 		0C3115D02C61AA732822E523 /* Pods-RainOrShine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RainOrShine.release.xcconfig"; path = "Pods/Target Support Files/Pods-RainOrShine/Pods-RainOrShine.release.xcconfig"; sourceTree = "<group>"; };
 		192CFAB31F37C25300685A02 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		192CFAB61F37C53900685A02 /* CurrentWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeather.swift; sourceTree = "<group>"; };
+		198C4E5A1F38107000484DAA /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		199937441F3700550057FCC5 /* RainOrShine.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RainOrShine.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		199937471F3700550057FCC5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		199937491F3700550057FCC5 /* WeatherVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherVC.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			isa = PBXGroup;
 			children = (
 				192CFAB61F37C53900685A02 /* CurrentWeather.swift */,
+				198C4E5A1F38107000484DAA /* Forecast.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 				199937481F3700550057FCC5 /* AppDelegate.swift in Sources */,
 				192CFAB71F37C53900685A02 /* CurrentWeather.swift in Sources */,
 				192CFAB41F37C25300685A02 /* Constants.swift in Sources */,
+				198C4E5B1F38107000484DAA /* Forecast.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
