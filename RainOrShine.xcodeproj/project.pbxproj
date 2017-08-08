@@ -397,6 +397,7 @@
 			baseConfigurationReference = 67341407C7ECA0A45E899720 /* Pods-RainOrShine.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = E8W6XDS66Q;
 				INFOPLIST_FILE = RainOrShine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -411,6 +412,7 @@
 			baseConfigurationReference = 0C3115D02C61AA732822E523 /* Pods-RainOrShine.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				DEVELOPMENT_TEAM = E8W6XDS66Q;
 				INFOPLIST_FILE = RainOrShine/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
