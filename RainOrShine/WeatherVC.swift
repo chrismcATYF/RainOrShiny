@@ -21,22 +21,18 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     let locationManager = CLLocationManager()
     var currentLocation: CLLocation!
-    
     var currentWeather = CurrentWeather()
     var forecast: Forecast!
     var allForecasts = [Forecast]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startMonitoringSignificantLocationChanges()
-        
         weatherTableView.delegate = self
         weatherTableView.dataSource = self
-        
         currentWeather = CurrentWeather()
     }
     
@@ -64,11 +60,8 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     func downloadForecastData(completed: @escaping DownloadComplete) {
         Alamofire.request(FORECAST_URL).responseJSON { response in
             let result = response.result
-            
             if let dict = result.value as? Dictionary<String, AnyObject> {
-                
                 if let list = dict["list"] as? [Dictionary<String, AnyObject>] {
-                    
                     for obj in list {
                         let forecast = Forecast(weatherDict: obj)
                         self.allForecasts.append(forecast)
@@ -92,15 +85,12 @@ class WeatherVC: UIViewController, UITableViewDelegate, UITableViewDataSource, C
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "weatherCell", for: indexPath) as? WeatherCell {
-            
             let forecast = allForecasts[indexPath.row]
-            
             cell.configureCell(forecast: forecast)
             return cell
         } else {
             return WeatherCell()
         }
-        
     }
     
     func updateMainUI() {
